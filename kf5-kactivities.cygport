@@ -1,0 +1,38 @@
+inherit kf5
+
+NAME="kf5-kactivities"
+VERSION=5.10.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 activity awareness library"
+DESCRIPTION="When a user is interacting with a computer, there are three main
+areas of contextual information that may affect the behaviour of the system:
+who the user is, where they are, and what they are doing. KActivities deals
+with the latter."
+
+PKG_NAMES="libKF5Activities5 libKF5Activities-devel" # kactivities
+kactivities_CONTENTS="
+	usr/bin/kactivitymanagerd.exe
+	${QT5_PLUGINSDIR#/}/kactivitymanagerd*
+"
+libKF5Activities5_CONTENTS="
+	usr/bin/cygKF5Activities-5.dll
+	${QT5_PLUGINSDIR#/}/kcm_activities.dll
+	${QT5_PLUGINSDIR#/}/kio_activities.dll
+	${QT5_QMLDIR#/}
+	usr/share/doc/
+	usr/share/kf5/
+	usr/share/kservices5/
+	usr/share/kservicetypes5/
+	usr/share/locale/
+"
+libKF5Activities_devel_REQUIRES="libQt5Core-devel"
+libKF5Activities_devel_CONTENTS="
+	usr/include/KF5/KActivities/
+	usr/include/KF5/kactivities_version.h
+	usr/lib/cmake/KF5Activities/
+	${QT5_MKSPECSDIR#/}/modules/qt_KActivities.pri
+	usr/lib/libKF5Activities.dll.a
+	usr/lib/pkgconfig/libKActivities.pc
+"
+PKG_IGNORE=${kactivities_CONTENTS}
