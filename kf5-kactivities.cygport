@@ -1,7 +1,7 @@
 inherit kf5
 
 NAME="kf5-kactivities"
-VERSION=5.27.0
+VERSION=5.35.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="KDE 5 activity awareness library"
@@ -9,8 +9,6 @@ DESCRIPTION="When a user is interacting with a computer, there are three main
 areas of contextual information that may affect the behaviour of the system:
 who the user is, where they are, and what they are doing. KActivities deals
 with the latter."
-
-PATCH_URI="5.27.0-kio-dep.patch"
 
 PKG_NAMES="libKF5Activities5 libKF5Activities-devel"
 libKF5Activities5_CONTENTS="
